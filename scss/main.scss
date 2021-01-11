@@ -1,3 +1,7 @@
+@import "helpers/mixins.scss";
+@import "helpers/placeholders.scss";
+@import "helpers/variables.scss";
+
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +10,225 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 10px;
+    font-size: $html;
 }
 
 body {
+    height: 100vh;
+    background-color: #f2f2f2;
+
     font: {
-        size: 1.6rem;
+        size: $body;
+        family: $main-font-family;
+    }
+
+    main {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+
+        div {
+
+            .phone {
+                background-color: $white;
+                width: 24.7rem;
+                height: 50.5rem;
+                position: relative;
+                box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
+                border-radius: 30px;
+                padding: 1.1rem 0.95rem;
+                overflow: hidden;
+
+                .phone-main {
+                    background: $white;
+                    border-radius: 30px;
+                    height: 100%;
+                    overflow: hidden;
+
+                    .chat-top {
+                        background: linear-gradient(225deg, $light-magenta, $light-violet);
+                        box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
+                        border-radius: 0 0 8px 8px;
+
+                        .phone-top {
+                            width: 12.9rem;
+                            height: 2.9rem;
+                            background-color: $white;
+                            border-radius: 0 0 14px 14px;
+                            margin: -1.1rem auto 0;
+                        }
+
+                        .chat-top-content {
+                            padding: 3rem 1.55rem 1rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .main {
+                                display: flex;
+                                align-items: center;
+
+                                .back {
+                                    width: 4px;
+                                    height: 10px;
+
+                                    div {
+                                        width: 2px;
+                                        height: 5px;
+                                        background: $white;
+                                    }
+
+                                    .top {
+                                        transform: skew(-45deg);
+                                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                        border-radius: 10px 10px 0 10px;
+                                    }
+
+                                    .bottom {
+                                        transform: skew(45deg);
+                                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                        border-radius: 10px 0 10px 10px;
+                                    }
+                                }
+
+                                .content {
+                                    display: flex;
+
+                                    figure {
+                                        overflow: hidden;
+                                        border: 1px solid $white;
+                                        border-radius: 100%;
+                                        height: 2.4rem;
+                                        width: 2.4rem;
+                                        margin: 0 0.8rem;
+
+                                        img {
+                                            width: 100%;
+                                            height: auto;
+                                        }
+                                    }
+                                }
+
+                                .text {
+                                    p {
+                                        font: {
+                                            weight: 400;
+                                            size: 1.1rem;
+                                        }
+
+                                        color: $white;
+                                        margin-bottom: 0.2rem;
+                                    }
+
+                                    .small {
+                                        color: $availability-text;
+
+                                        font: {
+                                            size: 0.8rem;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .more {
+                                display: flex;
+                                flex-direction: column;
+
+                                div {
+                                    width: 2px;
+                                    height: 2px;
+                                    margin: 1px 0;
+                                    border-radius: 100%;
+                                    background-color: $white;
+                                }
+                            }
+                        }
+
+                    }
+
+                    .chat-main {
+                        font-size: 0.8rem;
+                        background-color: $app-background;
+                        height: 100%;
+                        padding: 1rem 0.75rem;
+
+                        .walker-text {
+                            border-radius: 10px 10px 10px 4px;
+                            @extend %chat-box;
+                            @include chat-box($walker-text, $walker-background);
+
+                            &:last-child {
+                                margin-top: 1.6rem;
+                            }
+                        }
+
+                        .dog-images {
+                            @extend %chat-box;
+                            max-width: 13.6rem;
+                            display: flex;
+                            justify-content: center;
+                            margin: 1.6rem 0 0 auto;
+
+                            figure {
+                                overflow: hidden;
+                                width: 4rem;
+                                height: 4rem;
+                                box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
+                                border-radius: 10px;
+
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+                        }
+
+                        .customer-text {
+                            margin: 0 0 0.8rem auto;
+                            border-radius: 10px 10px 4px 10px;
+                            @extend %chat-box;
+                            @include chat-box($customer-text, $white);
+                        }
+
+                        .walk-rate {
+                            background: linear-gradient(225deg, $light-violet 0%, $light-magenta 100%);
+                            box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
+                            border-radius: 10px 10px 4px 10px;
+                            color: $white;
+
+                            // transform: matrix(-1, 0, 0, 1, 0, 0);
+                            .circle {}
+
+                            .text {
+                                .duration {}
+
+                                .price {}
+                            }
+                        }
+
+                        .text-box {}
+                    }
+                }
+            }
+        }
+
+        section {
+            h1 {
+                font: {
+                    weight: 500;
+                    size: 4rem;
+                }
+
+                color: $main-heading-text;
+                margin-bottom: 2.4rem;
+            }
+
+            p {
+                line-height: 2.8rem;
+                width: 44.5rem;
+                color: $paragraph-text;
+            }
+        }
     }
 }

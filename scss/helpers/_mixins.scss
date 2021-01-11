@@ -1,0 +1,4 @@
+@mixin chat-box($text-color, $background) {
+    background: $background;
+    color: $text-color;
+}
