@@ -22,7 +22,7 @@ Project is: _finished_
 
 ## Inspiration  
 
-Project was inspired one of [frontendmentor's](https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY) challenges.
+Project was inspired by one of [frontendmentor's](https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY) challenges.
 
 ## Contact  
 
