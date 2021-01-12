@@ -14,7 +14,7 @@
 
 ## Setup  
 
-Visit [Chat App Illustration](https://github.com/funmilolajire/chat-app-css-illustration) in your browser
+Visit [Chat App Illustration](https://funmilolajire.github.io/chat-app-css-illustration/) in your browser
 
 ## Status  
 
