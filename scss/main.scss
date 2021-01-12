@@ -16,10 +16,49 @@ html {
 body {
     height: 100vh;
     background-color: #f2f2f2;
+    position: relative;
+    overflow: hidden;
+
+    @media all and (width: 414px) {
+        height: 100%;
+    }
 
     font: {
         size: $body;
         family: $main-font-family;
+    }
+
+    .top-left {
+        width: 51rem;
+        height: 101.8rem;
+        background: linear-gradient(225deg, $light-magenta, $light-violet);
+        border-radius: 255px;
+        position: absolute;
+        left: -11rem;
+        top: -40.9rem;
+
+        @media all and (max-width: 414px) {
+            left: -32rem;
+            top: -52rem;
+        }
+    }
+
+    .bottom-right {
+        width: 51rem;
+        height: 101.8rem;
+        background: linear-gradient(225deg, $light-magenta, $light-violet);
+        border-radius: 255px;
+        position: absolute;
+        left: 105.5rem;
+        bottom: -40.9rem;
+        mix-blend-mode: normal;
+        opacity: 0.03;
+
+        @media all and (max-width: 414px) {
+            left: 18.8rem;
+            top: 39rem;
+            bottom: 0;
+        }
     }
 
     main {
@@ -27,13 +66,23 @@ body {
         justify-content: space-evenly;
         align-items: center;
         height: 100%;
+        padding: 0 15.6rem 0 25rem;
+
+        @media all and (max-width: 414px) {
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 6.4rem 3.2rem;
+        }
 
         div {
+            position: relative;
+            z-index: 1;
 
             .phone {
                 background-color: $white;
                 width: 24.7rem;
-                height: 50.5rem;
+                height: 49rem;
+                /*50.5*/
                 position: relative;
                 box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
                 border-radius: 30px;
@@ -41,26 +90,28 @@ body {
                 overflow: hidden;
 
                 .phone-main {
-                    background: $white;
-                    border-radius: 30px;
-                    height: 100%;
+                    background: $app-background;
+                    border-radius: 20px;
+                    height: 46.8rem;
+                    /*48.3*/
+                    border: 1px solid $white;
                     overflow: hidden;
 
                     .chat-top {
                         background: linear-gradient(225deg, $light-magenta, $light-violet);
-                        box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
-                        border-radius: 0 0 8px 8px;
+                        box-shadow: 0px 0px 13px rgba(62, 39, 83, 0.251202);
+                        border-radius: 20px 20px 6px 6px;
 
                         .phone-top {
                             width: 12.9rem;
-                            height: 2.9rem;
+                            height: 3rem;
                             background-color: $white;
                             border-radius: 0 0 14px 14px;
                             margin: -1.1rem auto 0;
                         }
 
                         .chat-top-content {
-                            padding: 3rem 1.55rem 1rem;
+                            padding: 1.2rem 1.55rem 1rem;
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
@@ -74,19 +125,19 @@ body {
                                     height: 10px;
 
                                     div {
-                                        width: 3px;
+                                        width: 2px;
                                         height: 5px;
                                         background: $white;
                                     }
 
                                     .top {
-                                        transform: skew(-45deg);
+                                        transform: skew(-25deg);
                                         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                                         border-radius: 10px 10px 0 10px;
                                     }
 
                                     .bottom {
-                                        transform: skew(45deg);
+                                        transform: skew(25deg);
                                         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                                         border-radius: 10px 0 10px 10px;
                                     }
@@ -150,25 +201,25 @@ body {
                     .chat-main {
                         font-size: 0.8rem;
                         background-color: $app-background;
-                        height: 100%;
                         padding: 1rem 0.75rem;
 
                         .walker-text {
                             border-radius: 10px 10px 10px 4px;
                             @extend %chat-box;
                             @include chat-box($walker-text, $walker-background);
+                        }
 
-                            &:last-child {
-                                margin-top: 1.6rem;
-                            }
+                        .walker-text.last {
+                            margin-top: 1.6rem;
                         }
 
                         .dog-images {
                             @extend %chat-box;
-                            max-width: 13.6rem;
+                            width: 13.6rem;
                             display: flex;
-                            justify-content: center;
-                            margin: 1.6rem 0 0 auto;
+                            justify-content: space-between;
+                            padding: 0;
+                            margin: 1.6rem 0 0.8rem auto;
 
                             figure {
                                 overflow: hidden;
@@ -192,29 +243,111 @@ body {
                         }
 
                         .walk-rate {
-                            background: linear-gradient(225deg, $light-violet 0%, $light-magenta 100%);
+                            background: linear-gradient(150deg, $light-magenta 0%, $light-violet 100%);
                             box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
                             border-radius: 10px 10px 10px 4px;
                             color: $white;
                             display: flex;
-
+                            width: 16rem;
+                            align-items: center;
+                            padding: 1rem 0.8rem;
+                            margin-bottom: 0.8rem;
                             // transform: matrix(-1, 0, 0, 1, 0, 0);
-                            .circle {}
+
+                            .circle {
+                                width: 1.2rem;
+                                height: 1.2rem;
+                                border-radius: 100%;
+                                border: 1px solid $radio-button-outline;
+                            }
 
                             .text {
-                                .duration {}
+                                padding-left: 0.8rem;
+                                display: flex;
+                                width: 100%;
+                                align-items: center;
+                                justify-content: space-between;
 
-                                .price {}
+                                .duration {
+                                    font: {
+                                        size: 0.8rem;
+                                        weight: 400;
+                                    }
+                                }
+
+                                .price {
+                                    font: {
+                                        size: 1.2rem;
+                                        weight: 700;
+                                    }
+                                }
                             }
                         }
 
-                        .text-box {}
+                        .type-box {
+                            margin-top: 1.6rem;
+                            width: 21.3rem;
+                            background: $white;
+                            border-radius: 16.9544px;
+                            max-height: fit-content;
+                            height: 3.4rem;
+
+
+                            .type-box-content {
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding-left: 1.94rem;
+                                padding-right: 0.41rem;
+
+                                p {
+                                    font-size: 0.9rem;
+                                    color: $placeholder-text;
+                                    padding-top: 0.41rem;
+                                }
+
+                                .send {
+                                    width: 2.43rem;
+                                    height: 2.42rem;
+                                    background: $submit-button-background;
+                                    border-radius: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding-left: 0.15rem;
+
+                                    .arrow {
+                                        div {
+                                            width: 0.31rem;
+                                            height: 0.48rem;
+                                            background: $white;
+                                        }
+
+                                        .top {
+                                            transform: skew(45deg);
+                                            border-radius: 2px 2px 1px 0;
+                                        }
+
+                                        .bottom {
+                                            transform: skew(-45deg);
+                                            border-radius: 0px 1px 2px 2px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
 
         section {
+            position: relative;
+            z-index: 1;
+            padding-top: 6.4rem;
+
             h1 {
                 font: {
                     weight: 500;
@@ -227,8 +360,12 @@ body {
 
             p {
                 line-height: 2.8rem;
-                width: 44.5rem;
+                max-width: 44.5rem;
                 color: $paragraph-text;
+            }
+
+            @media all and (max-width: 414px) {
+                text-align: center;
             }
         }
     }

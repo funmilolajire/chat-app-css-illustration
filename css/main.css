@@ -21,19 +21,72 @@ html {
 body {
   height: 100vh;
   background-color: #f2f2f2;
+  position: relative;
+  overflow: hidden;
   font-size: 1.6rem;
   font-family: "Rubik", sans-serif;
+}
+@media all and (width: 414px) {
+  body {
+    height: 100%;
+  }
+}
+body .top-left {
+  width: 51rem;
+  height: 101.8rem;
+  background: linear-gradient(225deg, #e942ff, #8838ff);
+  border-radius: 255px;
+  position: absolute;
+  left: -11rem;
+  top: -40.9rem;
+}
+@media all and (max-width: 414px) {
+  body .top-left {
+    left: -32rem;
+    top: -52rem;
+  }
+}
+body .bottom-right {
+  width: 51rem;
+  height: 101.8rem;
+  background: linear-gradient(225deg, #e942ff, #8838ff);
+  border-radius: 255px;
+  position: absolute;
+  left: 105.5rem;
+  bottom: -40.9rem;
+  mix-blend-mode: normal;
+  opacity: 0.03;
+}
+@media all and (max-width: 414px) {
+  body .bottom-right {
+    left: 18.8rem;
+    top: 39rem;
+    bottom: 0;
+  }
 }
 body main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 100%;
+  padding: 0 15.6rem 0 25rem;
+}
+@media all and (max-width: 414px) {
+  body main {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 6.4rem 3.2rem;
+  }
+}
+body main div {
+  position: relative;
+  z-index: 1;
 }
 body main div .phone {
   background-color: white;
   width: 24.7rem;
-  height: 50.5rem;
+  height: 49rem;
+  /*50.5*/
   position: relative;
   box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
   border-radius: 30px;
@@ -41,25 +94,27 @@ body main div .phone {
   overflow: hidden;
 }
 body main div .phone .phone-main {
-  background: white;
-  border-radius: 30px;
-  height: 100%;
+  background: #f5f3f7;
+  border-radius: 20px;
+  height: 46.8rem;
+  /*48.3*/
+  border: 1px solid white;
   overflow: hidden;
 }
 body main div .phone .phone-main .chat-top {
   background: linear-gradient(225deg, #e942ff, #8838ff);
-  box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
-  border-radius: 0 0 8px 8px;
+  box-shadow: 0px 0px 13px rgba(62, 39, 83, 0.251202);
+  border-radius: 20px 20px 6px 6px;
 }
 body main div .phone .phone-main .chat-top .phone-top {
   width: 12.9rem;
-  height: 2.9rem;
+  height: 3rem;
   background-color: white;
   border-radius: 0 0 14px 14px;
   margin: -1.1rem auto 0;
 }
 body main div .phone .phone-main .chat-top .chat-top-content {
-  padding: 3rem 1.55rem 1rem;
+  padding: 1.2rem 1.55rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,17 +128,17 @@ body main div .phone .phone-main .chat-top .chat-top-content .main .back {
   height: 10px;
 }
 body main div .phone .phone-main .chat-top .chat-top-content .main .back div {
-  width: 3px;
+  width: 2px;
   height: 5px;
   background: white;
 }
 body main div .phone .phone-main .chat-top .chat-top-content .main .back .top {
-  transform: skew(-45deg);
+  transform: skew(-25deg);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px 10px 0 10px;
 }
 body main div .phone .phone-main .chat-top .chat-top-content .main .back .bottom {
-  transform: skew(45deg);
+  transform: skew(25deg);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px 0 10px 10px;
 }
@@ -126,7 +181,6 @@ body main div .phone .phone-main .chat-top .chat-top-content .more div {
 body main div .phone .phone-main .chat-main {
   font-size: 0.8rem;
   background-color: #f5f3f7;
-  height: 100%;
   padding: 1rem 0.75rem;
 }
 body main div .phone .phone-main .chat-main .walker-text {
@@ -134,14 +188,15 @@ body main div .phone .phone-main .chat-main .walker-text {
   background: #efe6f4;
   color: #9241c8;
 }
-body main div .phone .phone-main .chat-main .walker-text:last-child {
+body main div .phone .phone-main .chat-main .walker-text.last {
   margin-top: 1.6rem;
 }
 body main div .phone .phone-main .chat-main .dog-images {
-  max-width: 13.6rem;
+  width: 13.6rem;
   display: flex;
-  justify-content: center;
-  margin: 1.6rem 0 0 auto;
+  justify-content: space-between;
+  padding: 0;
+  margin: 1.6rem 0 0.8rem auto;
 }
 body main div .phone .phone-main .chat-main .dog-images figure {
   overflow: hidden;
@@ -161,11 +216,88 @@ body main div .phone .phone-main .chat-main .customer-text {
   color: #6e5d7e;
 }
 body main div .phone .phone-main .chat-main .walk-rate {
-  background: linear-gradient(225deg, #8838ff 0%, #e942ff 100%);
+  background: linear-gradient(150deg, #e942ff 0%, #8838ff 100%);
   box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
   border-radius: 10px 10px 10px 4px;
   color: white;
   display: flex;
+  width: 16rem;
+  align-items: center;
+  padding: 1rem 0.8rem;
+  margin-bottom: 0.8rem;
+}
+body main div .phone .phone-main .chat-main .walk-rate .circle {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100%;
+  border: 1px solid #e570ff;
+}
+body main div .phone .phone-main .chat-main .walk-rate .text {
+  padding-left: 0.8rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+body main div .phone .phone-main .chat-main .walk-rate .text .duration {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+body main div .phone .phone-main .chat-main .walk-rate .text .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body main div .phone .phone-main .chat-main .type-box {
+  margin-top: 1.6rem;
+  width: 21.3rem;
+  background: white;
+  border-radius: 16.9544px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  height: 3.4rem;
+}
+body main div .phone .phone-main .chat-main .type-box .type-box-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.94rem;
+  padding-right: 0.41rem;
+}
+body main div .phone .phone-main .chat-main .type-box .type-box-content p {
+  font-size: 0.9rem;
+  color: #c6cacd;
+  padding-top: 0.41rem;
+}
+body main div .phone .phone-main .chat-main .type-box .type-box-content .send {
+  width: 2.43rem;
+  height: 2.42rem;
+  background: #3e2753;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.15rem;
+}
+body main div .phone .phone-main .chat-main .type-box .type-box-content .send .arrow div {
+  width: 0.31rem;
+  height: 0.48rem;
+  background: white;
+}
+body main div .phone .phone-main .chat-main .type-box .type-box-content .send .arrow .top {
+  transform: skew(45deg);
+  border-radius: 2px 2px 1px 0;
+}
+body main div .phone .phone-main .chat-main .type-box .type-box-content .send .arrow .bottom {
+  transform: skew(-45deg);
+  border-radius: 0px 1px 2px 2px;
+}
+body main section {
+  position: relative;
+  z-index: 1;
+  padding-top: 6.4rem;
 }
 body main section h1 {
   font-weight: 500;
@@ -175,6 +307,11 @@ body main section h1 {
 }
 body main section p {
   line-height: 2.8rem;
-  width: 44.5rem;
+  max-width: 44.5rem;
   color: #a39daa;
+}
+@media all and (max-width: 414px) {
+  body main section {
+    text-align: center;
+  }
 }
