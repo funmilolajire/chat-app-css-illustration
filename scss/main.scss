@@ -14,325 +14,334 @@ html {
 }
 
 body {
-    height: 100vh;
-    background-color: #f2f2f2;
-    position: relative;
-    overflow: hidden;
-
-    @media all and (width: 414px) {
-        height: 100%;
-    }
 
     font: {
         size: $body;
         family: $main-font-family;
     }
 
-    .top-left {
-        width: 51rem;
-        height: 101.8rem;
-        background: linear-gradient(225deg, $light-magenta, $light-violet);
-        border-radius: 255px;
-        position: absolute;
-        left: -11rem;
-        top: -40.9rem;
 
-        @media all and (max-width: 414px) {
-            left: -32rem;
-            top: -52rem;
-        }
-    }
+    .container {
+        height: 100vh;
+        background-color: #f2f2f2;
+        position: relative;
+        overflow: hidden;
 
-    .bottom-right {
-        width: 51rem;
-        height: 101.8rem;
-        background: linear-gradient(225deg, $light-magenta, $light-violet);
-        border-radius: 255px;
-        position: absolute;
-        left: 105.5rem;
-        bottom: -40.9rem;
-        mix-blend-mode: normal;
-        opacity: 0.03;
-
-        @media all and (max-width: 414px) {
-            left: 18.8rem;
-            top: 39rem;
-            bottom: 0;
-        }
-    }
-
-    main {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 100%;
-        padding: 0 15.6rem 0 25rem;
-
-        @media all and (max-width: 414px) {
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 6.4rem 3.2rem;
+        @media all and (max-width: 684px) {
+            height: auto;
         }
 
-        div {
-            position: relative;
-            z-index: 1;
+        .top-left {
+            width: 51rem;
+            height: 101.8rem;
+            background: linear-gradient(225deg, $light-magenta, $light-violet);
+            border-radius: 255px;
+            position: absolute;
+            left: -11rem;
+            top: -40.9rem;
 
-            .phone {
-                background-color: $white;
-                width: 24.7rem;
-                height: 49rem;
-                /*50.5*/
+            @media all and (max-width: 414px) {
+                left: -32rem;
+                top: -52rem;
+            }
+        }
+
+        .bottom-right {
+            width: 51rem;
+            height: 101.8rem;
+            background: linear-gradient(225deg, $light-magenta, $light-violet);
+            border-radius: 255px;
+            position: absolute;
+            left: 105.5rem;
+            bottom: -40.9rem;
+            mix-blend-mode: normal;
+            opacity: 0.03;
+
+            @media all and (max-width: 414px) {
+                left: 18.8rem;
+                top: 39rem;
+                bottom: 0;
+            }
+        }
+
+        main {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100%;
+            padding: 0 15.6rem 0 25rem;
+
+            @media all and (max-width: 818px) {
+                flex-direction: column;
+                justify-content: center;
+                padding: 6.4rem 3.2rem;
+            }
+
+            @media all and (max-width: 414px) {
+                flex-wrap: wrap;
+                padding: 6.4rem 3.2rem;
+            }
+
+            div {
                 position: relative;
-                box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
-                border-radius: 30px;
-                padding: 1.1rem 0.95rem;
-                overflow: hidden;
+                z-index: 1;
 
-                .phone-main {
-                    background: $app-background;
-                    border-radius: 20px;
-                    height: 46.8rem;
-                    /*48.3*/
-                    border: 1px solid $white;
+                .phone {
+                    background-color: $white;
+                    width: 24.7rem;
+                    height: 49rem;
+                    /*50.5*/
+                    position: relative;
+                    box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
+                    border-radius: 30px;
+                    padding: 1.1rem 0.95rem;
                     overflow: hidden;
 
-                    .chat-top {
-                        background: linear-gradient(225deg, $light-magenta, $light-violet);
-                        box-shadow: 0px 0px 13px rgba(62, 39, 83, 0.251202);
-                        border-radius: 20px 20px 6px 6px;
+                    .phone-main {
+                        background: $app-background;
+                        border-radius: 20px;
+                        height: 46.8rem;
+                        /*48.3*/
+                        border: 1px solid $white;
+                        overflow: hidden;
 
-                        .phone-top {
-                            width: 12.9rem;
-                            height: 3rem;
-                            background-color: $white;
-                            border-radius: 0 0 14px 14px;
-                            margin: -1.1rem auto 0;
-                        }
+                        .chat-top {
+                            background: linear-gradient(225deg, $light-magenta, $light-violet);
+                            box-shadow: 0px 0px 13px rgba(62, 39, 83, 0.251202);
+                            border-radius: 20px 20px 6px 6px;
 
-                        .chat-top-content {
-                            padding: 1.2rem 1.55rem 1rem;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
+                            .phone-top {
+                                width: 12.9rem;
+                                height: 3rem;
+                                background-color: $white;
+                                border-radius: 0 0 14px 14px;
+                                margin: -1.1rem auto 0;
+                            }
 
-                            .main {
+                            .chat-top-content {
+                                padding: 1.2rem 1.55rem 1rem;
                                 display: flex;
-                                align-items: center;
-
-                                .back {
-                                    width: 4px;
-                                    height: 10px;
-
-                                    div {
-                                        width: 2px;
-                                        height: 5px;
-                                        background: $white;
-                                    }
-
-                                    .top {
-                                        transform: skew(-25deg);
-                                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                                        border-radius: 10px 10px 0 10px;
-                                    }
-
-                                    .bottom {
-                                        transform: skew(25deg);
-                                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                                        border-radius: 10px 0 10px 10px;
-                                    }
-                                }
-
-                                .content {
-                                    display: flex;
-
-                                    figure {
-                                        overflow: hidden;
-                                        border: 1px solid $white;
-                                        border-radius: 100%;
-                                        height: 2.4rem;
-                                        width: 2.4rem;
-                                        margin: 0 0.8rem;
-
-                                        img {
-                                            width: 100%;
-                                            height: auto;
-                                        }
-                                    }
-                                }
-
-                                .text {
-                                    p {
-                                        font: {
-                                            weight: 400;
-                                            size: 1.1rem;
-                                        }
-
-                                        color: $white;
-                                        margin-bottom: 0.2rem;
-                                    }
-
-                                    .small {
-                                        color: $availability-text;
-
-                                        font: {
-                                            size: 0.8rem;
-                                        }
-                                    }
-                                }
-                            }
-
-                            .more {
-                                display: flex;
-                                flex-direction: column;
-
-                                div {
-                                    width: 2px;
-                                    height: 2px;
-                                    margin: 1px 0;
-                                    border-radius: 100%;
-                                    background-color: $white;
-                                }
-                            }
-                        }
-
-                    }
-
-                    .chat-main {
-                        font-size: 0.8rem;
-                        background-color: $app-background;
-                        padding: 1rem 0.75rem;
-
-                        .walker-text {
-                            border-radius: 10px 10px 10px 4px;
-                            @extend %chat-box;
-                            @include chat-box($walker-text, $walker-background);
-                        }
-
-                        .walker-text.last {
-                            margin-top: 1.6rem;
-                        }
-
-                        .dog-images {
-                            @extend %chat-box;
-                            width: 13.6rem;
-                            display: flex;
-                            justify-content: space-between;
-                            padding: 0;
-                            margin: 1.6rem 0 0.8rem auto;
-
-                            figure {
-                                overflow: hidden;
-                                width: 4rem;
-                                height: 4rem;
-                                box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
-                                border-radius: 10px;
-
-                                img {
-                                    width: 100%;
-                                    height: auto;
-                                }
-                            }
-                        }
-
-                        .customer-text {
-                            margin: 0 0 0.8rem auto;
-                            border-radius: 10px 10px 4px 10px;
-                            @extend %chat-box;
-                            @include chat-box($customer-text, $white);
-                        }
-
-                        .walk-rate {
-                            background: linear-gradient(150deg, $light-magenta 0%, $light-violet 100%);
-                            box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
-                            border-radius: 10px 10px 10px 4px;
-                            color: $white;
-                            display: flex;
-                            width: 16rem;
-                            align-items: center;
-                            padding: 1rem 0.8rem;
-                            margin-bottom: 0.8rem;
-                            // transform: matrix(-1, 0, 0, 1, 0, 0);
-
-                            .circle {
-                                width: 1.2rem;
-                                height: 1.2rem;
-                                border-radius: 100%;
-                                border: 1px solid $radio-button-outline;
-                            }
-
-                            .text {
-                                padding-left: 0.8rem;
-                                display: flex;
-                                width: 100%;
                                 align-items: center;
                                 justify-content: space-between;
 
-                                .duration {
-                                    font: {
-                                        size: 0.8rem;
-                                        weight: 400;
-                                    }
-                                }
-
-                                .price {
-                                    font: {
-                                        size: 1.2rem;
-                                        weight: 700;
-                                    }
-                                }
-                            }
-                        }
-
-                        .type-box {
-                            margin-top: 1.6rem;
-                            width: 21.3rem;
-                            background: $white;
-                            border-radius: 16.9544px;
-                            max-height: fit-content;
-                            height: 3.4rem;
-
-
-                            .type-box-content {
-                                width: 100%;
-                                height: 100%;
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                padding-left: 1.94rem;
-                                padding-right: 0.41rem;
-
-                                p {
-                                    font-size: 0.9rem;
-                                    color: $placeholder-text;
-                                    padding-top: 0.41rem;
-                                }
-
-                                .send {
-                                    width: 2.43rem;
-                                    height: 2.42rem;
-                                    background: $submit-button-background;
-                                    border-radius: 100%;
+                                .main {
                                     display: flex;
-                                    justify-content: center;
                                     align-items: center;
-                                    padding-left: 0.15rem;
 
-                                    .arrow {
+                                    .back {
+                                        width: 4px;
+                                        height: 10px;
+
                                         div {
-                                            width: 0.31rem;
-                                            height: 0.48rem;
+                                            width: 2px;
+                                            height: 5px;
                                             background: $white;
                                         }
 
                                         .top {
-                                            transform: skew(45deg);
-                                            border-radius: 2px 2px 1px 0;
+                                            transform: skew(-25deg);
+                                            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                            border-radius: 10px 10px 0 10px;
                                         }
 
                                         .bottom {
-                                            transform: skew(-45deg);
-                                            border-radius: 0px 1px 2px 2px;
+                                            transform: skew(25deg);
+                                            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                            border-radius: 10px 0 10px 10px;
+                                        }
+                                    }
+
+                                    .content {
+                                        display: flex;
+
+                                        figure {
+                                            overflow: hidden;
+                                            border: 1px solid $white;
+                                            border-radius: 100%;
+                                            height: 2.4rem;
+                                            width: 2.4rem;
+                                            margin: 0 0.8rem;
+
+                                            img {
+                                                width: 100%;
+                                                height: auto;
+                                            }
+                                        }
+                                    }
+
+                                    .text {
+                                        p {
+                                            font: {
+                                                weight: 400;
+                                                size: 1.1rem;
+                                            }
+
+                                            color: $white;
+                                            margin-bottom: 0.2rem;
+                                        }
+
+                                        .small {
+                                            color: $availability-text;
+
+                                            font: {
+                                                size: 0.8rem;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .more {
+                                    display: flex;
+                                    flex-direction: column;
+
+                                    div {
+                                        width: 2px;
+                                        height: 2px;
+                                        margin: 1px 0;
+                                        border-radius: 100%;
+                                        background-color: $white;
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .chat-main {
+                            font-size: 0.8rem;
+                            background-color: $app-background;
+                            padding: 1rem 0.75rem;
+
+                            .walker-text {
+                                border-radius: 10px 10px 10px 4px;
+                                @extend %chat-box;
+                                @include chat-box($walker-text, $walker-background);
+                            }
+
+                            .walker-text.last {
+                                margin-top: 1.6rem;
+                            }
+
+                            .dog-images {
+                                @extend %chat-box;
+                                width: 13.6rem;
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 0;
+                                margin: 1.6rem 0 0.8rem auto;
+
+                                figure {
+                                    overflow: hidden;
+                                    width: 4rem;
+                                    height: 4rem;
+                                    box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
+                                    border-radius: 10px;
+
+                                    img {
+                                        width: 100%;
+                                        height: auto;
+                                    }
+                                }
+                            }
+
+                            .customer-text {
+                                margin: 0 0 0.8rem auto;
+                                border-radius: 10px 10px 4px 10px;
+                                @extend %chat-box;
+                                @include chat-box($customer-text, $white);
+                            }
+
+                            .walk-rate {
+                                background: linear-gradient(150deg, $light-magenta 0%, $light-violet 100%);
+                                box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
+                                border-radius: 10px 10px 10px 4px;
+                                color: $white;
+                                display: flex;
+                                width: 16rem;
+                                align-items: center;
+                                padding: 1rem 0.8rem;
+                                margin-bottom: 0.8rem;
+                                // transform: matrix(-1, 0, 0, 1, 0, 0);
+
+                                .circle {
+                                    width: 1.2rem;
+                                    height: 1.2rem;
+                                    border-radius: 100%;
+                                    border: 1px solid $radio-button-outline;
+                                }
+
+                                .text {
+                                    padding-left: 0.8rem;
+                                    display: flex;
+                                    width: 100%;
+                                    align-items: center;
+                                    justify-content: space-between;
+
+                                    .duration {
+                                        font: {
+                                            size: 0.8rem;
+                                            weight: 400;
+                                        }
+                                    }
+
+                                    .price {
+                                        font: {
+                                            size: 1.2rem;
+                                            weight: 700;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .type-box {
+                                margin-top: 1.6rem;
+                                width: 21.3rem;
+                                background: $white;
+                                border-radius: 16.9544px;
+                                max-height: fit-content;
+                                height: 3.4rem;
+
+
+                                .type-box-content {
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding-left: 1.94rem;
+                                    padding-right: 0.41rem;
+
+                                    p {
+                                        font-size: 0.9rem;
+                                        color: $placeholder-text;
+                                        padding-top: 0.41rem;
+                                    }
+
+                                    .send {
+                                        width: 2.43rem;
+                                        height: 2.42rem;
+                                        background: $submit-button-background;
+                                        border-radius: 100%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        padding-left: 0.15rem;
+
+                                        .arrow {
+                                            div {
+                                                width: 0.31rem;
+                                                height: 0.48rem;
+                                                background: $white;
+                                            }
+
+                                            .top {
+                                                transform: skew(45deg);
+                                                border-radius: 2px 2px 1px 0;
+                                            }
+
+                                            .bottom {
+                                                transform: skew(-45deg);
+                                                border-radius: 0px 1px 2px 2px;
+                                            }
                                         }
                                     }
                                 }
@@ -341,31 +350,35 @@ body {
                     }
                 }
             }
-        }
 
-        section {
-            position: relative;
-            z-index: 1;
-            padding-top: 6.4rem;
+            section {
+                position: relative;
+                z-index: 1;
+                padding-top: 6.4rem;
 
-            h1 {
-                font: {
-                    weight: 500;
-                    size: 4rem;
+                h1 {
+                    font: {
+                        weight: 500;
+                        size: 4rem;
+                    }
+
+                    color: $main-heading-text;
+                    margin-bottom: 2.4rem;
                 }
 
-                color: $main-heading-text;
-                margin-bottom: 2.4rem;
-            }
+                p {
+                    line-height: 2.8rem;
+                    max-width: 44.5rem;
+                    color: $paragraph-text;
+                }
 
-            p {
-                line-height: 2.8rem;
-                max-width: 44.5rem;
-                color: $paragraph-text;
-            }
+                @media all and (max-width: 1024px) and (min-width: 880px) {
+                    padding-left: 5rem;
+                }
 
-            @media all and (max-width: 414px) {
-                text-align: center;
+                @media all and (max-width: 414px) {
+                    text-align: center;
+                }
             }
         }
     }
