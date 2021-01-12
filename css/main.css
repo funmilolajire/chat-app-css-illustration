@@ -73,7 +73,7 @@ body main div .phone .phone-main .chat-top .chat-top-content .main .back {
   height: 10px;
 }
 body main div .phone .phone-main .chat-top .chat-top-content .main .back div {
-  width: 2px;
+  width: 3px;
   height: 5px;
   background: white;
 }
@@ -163,8 +163,9 @@ body main div .phone .phone-main .chat-main .customer-text {
 body main div .phone .phone-main .chat-main .walk-rate {
   background: linear-gradient(225deg, #8838ff 0%, #e942ff 100%);
   box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
-  border-radius: 10px 10px 4px 10px;
+  border-radius: 10px 10px 10px 4px;
   color: white;
+  display: flex;
 }
 body main section h1 {
   font-weight: 500;

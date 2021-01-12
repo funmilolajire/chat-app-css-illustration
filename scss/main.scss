@@ -74,7 +74,7 @@ body {
                                     height: 10px;
 
                                     div {
-                                        width: 2px;
+                                        width: 3px;
                                         height: 5px;
                                         background: $white;
                                     }
@@ -194,8 +194,9 @@ body {
                         .walk-rate {
                             background: linear-gradient(225deg, $light-violet 0%, $light-magenta 100%);
                             box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
-                            border-radius: 10px 10px 4px 10px;
+                            border-radius: 10px 10px 10px 4px;
                             color: $white;
+                            display: flex;
 
                             // transform: matrix(-1, 0, 0, 1, 0, 0);
                             .circle {}
