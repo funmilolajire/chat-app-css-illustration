@@ -143,12 +143,12 @@ body .container main div .phone .phone-main .chat-top .chat-top-content .main .b
 body .container main div .phone .phone-main .chat-top .chat-top-content .main .back .top {
   transform: skew(-25deg);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px 10px 0 10px;
+  border-radius: 10px 10px 0 0;
 }
 body .container main div .phone .phone-main .chat-top .chat-top-content .main .back .bottom {
   transform: skew(25deg);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px 0 10px 10px;
+  border-radius: 0 0 10px 10px;
 }
 body .container main div .phone .phone-main .chat-top .chat-top-content .main .content {
   display: flex;
@@ -265,6 +265,11 @@ body .container main div .phone .phone-main .chat-main .type-box {
   max-height: fit-content;
   height: 3.4rem;
 }
+@media all and (max-width: 360px) {
+  body .container main div .phone .phone-main .chat-main .type-box {
+    margin-top: 1.4rem;
+  }
+}
 body .container main div .phone .phone-main .chat-main .type-box .type-box-content {
   width: 100%;
   height: 100%;
@@ -296,11 +301,11 @@ body .container main div .phone .phone-main .chat-main .type-box .type-box-conte
 }
 body .container main div .phone .phone-main .chat-main .type-box .type-box-content .send .arrow .top {
   transform: skew(45deg);
-  border-radius: 2px 2px 1px 0;
+  border-radius: 2px 2px 0px 0;
 }
 body .container main div .phone .phone-main .chat-main .type-box .type-box-content .send .arrow .bottom {
   transform: skew(-45deg);
-  border-radius: 0px 1px 2px 2px;
+  border-radius: 0px 0px 2px 2px;
 }
 body .container main section {
   position: relative;
